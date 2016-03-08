@@ -1,0 +1,42 @@
+<resources>
+    <string name="main_personatges">Llistat de personatges</string>
+    <string name="places_list">Llistat de localitzacions</string>
+    <string name="spells_list">Llistat de conjurs</string>
+    <string name="objects_list">Llistat d\'objectes</string>
+    <string name="opcions_persona">Opcions de Personatges</string>
+    <string name="opcions_lloc">Opcions de Llocs</string>
+    <string name="opcions_objecte">Opcions de Objectes</string>
+    <string name="opcions_encanteri">Opcions de Encanteris</string>
+    <string name="title_item_detail">Item Detail</string>
+    <string name="intent_param_character">\"dades\"</string>
+    <string name="intent_param_titular">\"dades\"</string>
+    <string name="action_search">Cercar</string>
+    <string name="action_edit">Editar</string>
+    <string name="action_share">Compartir</string>
+    <string name="action_delete">Esborrar</string>
+    <string name="dialog_ok">Tancar</string>
+    <string name="large_text">result</string>
+    <string name="firstname">Nom:</string>
+    <string name="lastname">Cognom:</string>
+    <string name="family">Família:</string>
+    <string name="nommenu"></string>
+
+    <!--<string name="dialog_cancel">Cancel·lar</string>-->
+    <string name="title_activity_second">Ronald Weasley</string>
+    <string name="Plain_text">
+    "Harry James Potter (i. El 31 de juliol de 1980), és un mag de sang mestissa,
+        a més de ser l'únic fill de James Potter i Lily Potter.
+        És l'única persona coneguda que ha sobreviscut a la maledicció de Avada Kedavra,
+        la qual va ser conjurada per Lord Voldemort en un intent de matar a Harry durant
+        la seva etapa de nadó, però en haver sobreviscut, comporta a la primer derrota
+        de Voldemort i el final de la Primera Guerra Màgica. Un cop orfe, Harry és
+        acollit pels seus parents muggles, els Dursley."
+    </string>
+    <string name="selecciona_un_apartat">SELECCIONA UN APARTAT:</string>
+    <string name="personatges">□ PERSONATGES</string>
+    <string name="llocs">□ LOCALITZACIONS</string>
+    <string name="encanteris">□ ENCANTERIS</string>
+    <string name="objectes">□ OBJECTES</string>
+    <string name="btnUnloadImage">ALLIBERA UNA SNITCH DAURADA</string>
+
+</resources>

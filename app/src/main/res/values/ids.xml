@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="detail_txtview_firstname" type="id">Nom</item>
+    <item name="detail_txtview_lastname" type="id">Cognom</item>
+    <item name="detail_txtview_family" type="id">Família</item>
+    <item name="detail_txtview_nommenu" type="id">nommenu</item>
+    <item name="main_txtview_nommenu" type="id">nommenu</item>
+</resources>

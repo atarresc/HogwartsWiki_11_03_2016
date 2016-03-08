@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="cat.albert.hogwartswiki">
+    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="Hogwarts Wiki"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".views.impl.activities.MainActivity"
+            android:label="@string/main_personatges">
+        </activity>
+
+        <activity
+            android:name=".views.impl.activities.PlaceActivity"
+            android:label="@string/places_list">
+        </activity>
+
+        <activity
+            android:name=".views.impl.activities.SpellActivity"
+            android:label="@string/spells_list">
+        </activity>
+
+        <activity
+            android:name=".views.impl.activities.ObjectActivity"
+            android:label="@string/objects_list">
+        </activity>
+
+        <activity
+            android:name=".views.impl.activities.MenuCharacterAct"
+            android:label="@string/opcions_persona">
+        </activity>
+
+        <activity
+            android:name=".views.impl.activities.MenuPlaceAct"
+            android:label="@string/opcions_lloc">
+        </activity>
+
+        <activity
+            android:name=".views.impl.activities.MenuObjectAct"
+            android:label="@string/opcions_objecte">
+        </activity>
+
+        <activity
+            android:name=".views.impl.activities.MenuSpellAct"
+            android:label="@string/opcions_encanteri">
+        </activity>
+
+        <activity android:name=".views.impl.activities.PrimeraActivity">
+            <intent-filter>
+
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value="cat.albert.hogwartswiki.views.impl.activities.PrimeraActivity" />
+    </application>
+
+</manifest>
