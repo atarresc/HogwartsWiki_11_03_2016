@@ -75,7 +75,6 @@ public class CharactersSQLiteDAO implements CharactersDAO {
             Log.e("Characters", e.getMessage());
             return false;
         }
-
     }
 
     @Override
