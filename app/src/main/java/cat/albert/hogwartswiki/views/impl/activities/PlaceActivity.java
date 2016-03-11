@@ -1,13 +1,18 @@
 package cat.albert.hogwartswiki.views.impl.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
+
+import org.parceler.Parcels;
 
 import java.util.List;
 
@@ -52,9 +57,6 @@ public class PlaceActivity extends AppCompatActivity implements IMainPlaceView, 
 
 
     public void goToDetailActivity(Place place) {
-//        Intent intent = new Intent(this, SecondActivity.class);
-//        intent.putExtra("PERSON", Parcels.wrap(character));
-//        startActivity(intent);
     }
 
     public void createList(PlaceListAdapter adapter) {
@@ -62,6 +64,35 @@ public class PlaceActivity extends AppCompatActivity implements IMainPlaceView, 
         list.setOnItemClickListener(this);
     }
 
+    //Menú crear nou element
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_item_crear, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        if(item.getItemId() == R.id.menu_item_crear) {
+            crearLocalitzacio();
+
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if(requestCode == 0 && resultCode == RESULT_OK) {
+            Place place = (Place) Parcels.unwrap(data.getParcelableExtra("PLACE"));
+            presenter.afegirLocalitzacio(place);
+        }
+    }
+
+    private void crearLocalitzacio() {
+        Intent i = new Intent(this, PlaceOmplirCamps.class);
+        startActivityForResult(i, 0, null);
+
+    }
 
     public void showProgressBar() {
         progressBar.setVisibility(View.VISIBLE);
@@ -92,17 +123,7 @@ public class PlaceActivity extends AppCompatActivity implements IMainPlaceView, 
     }
 
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-//        Intent i = new Intent(this, SecondActivity.class);
-//
-//
-//        Character character = (Character) parent.getItemAtPosition(position);
-//        Bundle b = new Bundle();
-//        b.putSerializable(getString(R.string.intent_param_character), character);
-//        i.putExtras(b);
-//
-//        startActivityForResult(i, INTENT_REQUEST);
-//
-//        presenter.onItemClicked(position);
+
     }
 }
 

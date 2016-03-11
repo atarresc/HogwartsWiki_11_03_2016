@@ -6,6 +6,7 @@ import org.parceler.Parcel;
 /**
  * Created by albert on 15/02/2016.
  */
+@Parcel
 public class Character implements Serializable {
     private String firstName;
     private String lastName;

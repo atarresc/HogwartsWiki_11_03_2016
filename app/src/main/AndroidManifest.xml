@@ -15,6 +15,11 @@
         </activity>
 
         <activity
+            android:name=".views.impl.activities.MainOmplirCamps"
+            android:label="@string/opcions_persona">
+        </activity>
+
+        <activity
             android:name=".views.impl.activities.PlaceActivity"
             android:label="@string/places_list">
         </activity>
@@ -27,26 +32,6 @@
         <activity
             android:name=".views.impl.activities.ObjectActivity"
             android:label="@string/objects_list">
-        </activity>
-
-        <activity
-            android:name=".views.impl.activities.MenuCharacterAct"
-            android:label="@string/opcions_persona">
-        </activity>
-
-        <activity
-            android:name=".views.impl.activities.MenuPlaceAct"
-            android:label="@string/opcions_lloc">
-        </activity>
-
-        <activity
-            android:name=".views.impl.activities.MenuObjectAct"
-            android:label="@string/opcions_objecte">
-        </activity>
-
-        <activity
-            android:name=".views.impl.activities.MenuSpellAct"
-            android:label="@string/opcions_encanteri">
         </activity>
 
         <activity android:name=".views.impl.activities.PrimeraActivity">

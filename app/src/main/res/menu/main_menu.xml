@@ -6,4 +6,5 @@
         laMevaApp:actionProviderClass="android.support.v7.widget.ShareActionProvider"
         laMevaApp:showAsAction="ifRoom"
         android:icon="@android:drawable/ic_menu_edit"/>
+
 </menu>

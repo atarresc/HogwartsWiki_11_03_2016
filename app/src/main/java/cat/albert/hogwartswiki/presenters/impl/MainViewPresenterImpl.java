@@ -31,17 +31,16 @@ public class MainViewPresenterImpl implements IMainViewPresenter {
         view.showProgressBar();
         view.hideList();
 
-//        CharacterBuilder characterBuilder = new CharacterBuilder();
-//        characters = characterBuilder.getCharacters();
+
         CharactersDAO characterBuilder = new CharactersSQLiteDAO(context);
         characters = characterBuilder.getAll();
         showList();
     }
 
-//    public void afegirPersonatge(Character character) {
-//        charactersDAO.inserirPersona(character);
-//        showList();
-//    }
+    public void afegirPersonatge(Character character) {
+        charactersDAO.save(character);
+        showList();
+    }
 
     @Override
     public void showList() {

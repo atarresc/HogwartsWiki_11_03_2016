@@ -3,6 +3,8 @@ package cat.albert.hogwartswiki.views.impl.activities;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
@@ -31,9 +33,6 @@ public class MainActivity extends AppCompatActivity implements IMainView, Adapte
     private IMainViewPresenter presenter;
     private ListView list;
 
-    private final static int NOM = 0;
-    private final static int COGNOM = 1;
-    private final static int FAMILIA = 2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,10 +49,6 @@ public class MainActivity extends AppCompatActivity implements IMainView, Adapte
         presenter.getPersonsFromService();
     }
 
-    public void onClick(View view) {
-
-    }
-
     @Override
     public CharacterListAdapter createPersonAdapter(List<Character> characters) {
         return new CharacterListAdapter(this, characters);
@@ -61,35 +56,43 @@ public class MainActivity extends AppCompatActivity implements IMainView, Adapte
 
 
     public void goToDetailActivity(Character character) {
-//        Intent intent = new Intent(this, SecondActivity.class);
-//        intent.putExtra("PERSON", Parcels.wrap(character));
-//        startActivity(intent);
     }
+
 
     public void createList(CharacterListAdapter adapter) {
         list.setAdapter(adapter);
         list.setOnItemClickListener(this);
     }
 
-    public void emplenarNom(View v) {
-        Intent i = new Intent(this, EmplenarCamps.class);
-        // Iniciamos la segunda actividad, y le indicamos que la iniciamos
-        // para rellenar el nombre:
-        startActivityForResult(i, NOM);
+    //Menú crear nou element
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_item_crear, menu);
+        return true;
     }
 
-    public void emplenarCognom(View v) {
-        Intent i = new Intent(this, EmplenarCamps.class);
-        // Iniciamos la segunda actividad, y le indicamos que la iniciamos
-        // para rellenar el nombre:
-        startActivityForResult(i, COGNOM);
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        if(item.getItemId() == R.id.menu_item_crear) {
+            crearPersonatge();
+
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 
-    public void emplenarFamilia(View v) {
-        Intent i = new Intent(this, EmplenarCamps.class);
-        // Iniciamos la segunda actividad, y le indicamos que la iniciamos
-        // para rellenar el nombre:
-        startActivityForResult(i, NOM);
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if(requestCode == 0 && resultCode == RESULT_OK) {
+            Character character = (Character)Parcels.unwrap(data.getParcelableExtra("CHARACTER"));
+            presenter.afegirPersonatge(character);
+        }
+
+    }
+
+    private void crearPersonatge() {
+        Intent i = new Intent(this, MainOmplirCamps.class);
+        startActivityForResult(i, 0);
     }
 
     public void showProgressBar() {
@@ -121,17 +124,6 @@ public class MainActivity extends AppCompatActivity implements IMainView, Adapte
     }
 
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-//        Intent i = new Intent(this, SecondActivity.class);
-//
-//
-//        Character character = (Character) parent.getItemAtPosition(position);
-//        Bundle b = new Bundle();
-//        b.putSerializable(getString(R.string.intent_param_character), character);
-//        i.putExtras(b);
-//
-//        startActivityForResult(i, INTENT_REQUEST);
-//
-//        presenter.onItemClicked(position);
     }
 }
 

@@ -36,23 +36,23 @@ public class PrimeraActivity extends AppCompatActivity {
     private IMainViewPresenter presenter;
     private ListView list;
 
-    public void onClick(View view) {
-        Intent intent = new Intent(PrimeraActivity.this, MenuCharacterAct.class);
+    public void onClickPersonatges(View view) {
+        Intent intent = new Intent(PrimeraActivity.this, MainActivity.class);
         startActivity(intent);
     }
 
-    public void onClick1(View view) {
-        Intent intent = new Intent(PrimeraActivity.this, MenuPlaceAct.class);
+    public void onClickLocalitzacions(View view) {
+        Intent intent = new Intent(PrimeraActivity.this, PlaceActivity.class);
         startActivity(intent);
     }
 
-    public void onClick2(View view) {
-        Intent intent = new Intent(PrimeraActivity.this, MenuSpellAct.class);
+    public void onClickEncanteris(View view) {
+        Intent intent = new Intent(PrimeraActivity.this, SpellActivity.class);
         startActivity(intent);
     }
 
-    public void onClick3(View view) {
-        Intent intent = new Intent(PrimeraActivity.this, MenuObjectAct.class);
+    public void onClickObjectes(View view) {
+        Intent intent = new Intent(PrimeraActivity.this, ObjectActivity.class);
         startActivity(intent);
     }
 

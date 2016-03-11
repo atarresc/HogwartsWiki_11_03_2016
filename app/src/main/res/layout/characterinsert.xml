@@ -7,7 +7,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="ENTRA LES DADES DEL PERSONATGE A CREAR:"
+        android:text="ENTRA LES DADES DE LA LOCALITZACIÓ A CREAR:"
         android:textSize="17dp"
         android:id="@+id/textView_titol"
         android:layout_marginLeft="5dp"
@@ -21,7 +21,7 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Nom:"
-        android:id="@+id/textView_nom"
+        android:id="@+id/textView_placename"
         android:layout_alignParentTop="true"
         android:layout_alignStart="@+id/textView_titol"
         android:layout_marginTop="100dp" />
@@ -30,86 +30,34 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Cognom:"
-        android:id="@+id/textView_cognom"
-        android:layout_alignParentTop="true"
-        android:layout_alignStart="@+id/textView_titol"
-        android:layout_marginTop="150dp" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Família màgica:"
-        android:id="@+id/textView_familia"
-        android:layout_alignParentTop="true"
-        android:layout_alignStart="@+id/textView_titol"
-        android:layout_marginTop="200dp" />
+        android:text="Seguretat:"
+        android:id="@+id/textView_placesecuritylevel"
+        android:layout_below="@+id/editText_txtplacename"
+        android:layout_alignStart="@+id/editText_txtplacename" />
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/editText_txtnom"
+        android:id="@+id/editText_txtplacename"
         android:layout_alignParentTop="true"
         android:layout_marginTop="100dp"
-        android:layout_alignStart="@+id/textView_nom"
-        android:layout_alignEnd="@+id/editText_txtcognom" />
+        android:layout_alignStart="@+id/textView_placename" />
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/editText_txtcognom"
-        android:layout_alignTop="@+id/textView_cognom"
-        android:layout_alignStart="@+id/textView_cognom"
-        android:layout_toStartOf="@+id/button_cognom" />
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/editText_txtfamilia"
-        android:layout_alignTop="@+id/textView_familia"
-        android:layout_toStartOf="@+id/button_familia" />
+        android:id="@+id/editText_txtplacesecuritylevel"
+        android:layout_below="@+id/editText_txtplacename"
+        android:layout_alignParentStart="true" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="CREAR PERSONATGE"
+        android:text="CREAR LOCALITZACIÓ"
         android:id="@+id/button_crear"
         android:clickable="true"
         android:onClick=""
-        android:layout_below="@+id/editText_txtfamilia"
-        android:layout_alignEnd="@+id/textView_titol"
-        android:layout_marginTop="58dp" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="+"
-        android:id="@+id/button_nom"
-        android:layout_alignBottom="@+id/editText_txtnom"
-        android:layout_alignParentEnd="true"
-        android:clickable="true"
-        android:onClick="emplenarNom" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="+"
-        android:id="@+id/button_cognom"
-        android:layout_below="@+id/button_nom"
-        android:layout_alignParentEnd="true"
-        android:layout_alignStart="@+id/button_nom"
-        android:clickable="true"
-        android:onClick="emplenarCognom" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="+"
-        android:id="@+id/button_familia"
-        android:layout_alignBottom="@+id/editText_txtfamilia"
-        android:layout_alignParentEnd="true"
-        android:clickable="true"
-        android:onClick="emplenarFamilia" />
+        android:layout_centerVertical="true"
+        android:layout_alignEnd="@+id/textView_titol" />
 
 </RelativeLayout>
